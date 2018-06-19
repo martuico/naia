@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f9;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4d4f5c;
+}
+
+.main-navbar-bg {
+  /* background-color: #515252; */
+  border-bottom: solid 0.5px #5c5f5f;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.navbar-toggler-2 {
+  padding: .25rem .75rem;
+  font-size: 12px;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+}
+
+.search-top input.form-control {
+  border-right:none;
+}
+
+.search-top .input-group-append span {
+  background-color:#fff;
+  border:none;
+}
+
+ol.bread li a {
+  color: #fff;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #6c757d;
+    content: ">" !important;
+}
+
+.badge-notification {
+  position: absolute;
+  font-size: 38% !important;
+  color: transparent !important;
+}
+
+html,
+body,
+#root,
+#root>div,
+#root>div>.container-fluid,
+.main-body {
+  height: 100% !important;
+}
+
+.bd-sidebar {
+  background-color: #343a40;
+}
+
+.bd-sidebar nav a {
+  color: #a0a0a0;
+  border-bottom: solid 0.5px #5c5f5f;
+}
+
+.bd-sidebar nav a.active {
+  color: #3db487;
+  border-bottom: solid 0.5px #5c5f5f;
+  background-color: #000;
+}
+.bd-sidebar nav a:hover {
+  color: #d2d2d2;
+  border-bottom: solid 0.5px #5c5f5f;
+}
+.bd-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+}
+
+.bd-content .mainCard {
+  border-radius: 0px;
+}
+
+.widget-card {
+  width: 166px;
+}
+.card-actions {
+   padding: .5rem!important;
+}
+.card-actions .btn {
+  font-size: .675rem;
+}
+
+.widget-card .card-body .row .card-subtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.align-middle {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.card-link+.card-link {
+  margin-left: 0.25rem !important;
+}
+
+.tabCard {
+  border:none !important;
+}
+
+.tabCard .tabHeaderCard {
+  background: none;
+  border-bottom: none;
+}
+.tabCard .tabHeaderCard ul li a {
+  font-size: 13.5px;
+  color: #007bff;
+  font-weight: 500;
+}
+.tabCard .tabContentCard {
+  border: 1px solid rgba(0,0,0,.125);
+  padding-left: 0;
+  padding-right: 0;
+}
