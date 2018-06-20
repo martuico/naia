@@ -31,12 +31,12 @@ const widgets_list = [
   {
     icon: 'user-md',
     title: 'Nurse To-dos',
-    total: 11
+    total: 8
   },
   {
     icon: 'flask',
     title: 'Outside Labs',
-    total: 11
+    total: 13
   }
 ];
 const widgets_list2 = [
@@ -68,12 +68,12 @@ const widgets_list2 = [
   {
     icon: 'stethoscope',
     title: 'Screening To-dos',
-    total: 11
+    total: 8
   },
   {
     icon: 'file-medical',
     title: 'Screening Results',
-    total: 11
+    total: 13
   }
 ];
 
@@ -86,14 +86,15 @@ const tabsCardStyle = {
 }
 class App extends Component {
   render() {
-    const widgets = widgets_list.map((wd) =>
-      <div className="col-2 pl-1 pr-1" style={widgetCardStyle}>
-        <Widget widget={wd} key={wd}></Widget>
+    let x = 1, y = 99
+    const widgets = widgets_list.map((wd, i) =>
+      <div className="col-2 pl-1 pr-1" key={i} style={widgetCardStyle}>
+        <Widget widget={wd}></Widget>
       </div>
     )
-    const widgets_2 = widgets_list2.map((wd) =>
-      <div className="col-2 pl-1 pr-1" style={widgetCardStyle}>
-        <Widget widget={wd} key={wd}></Widget>
+    const widgets_2 = widgets_list2.map((wd, i) =>
+      <div className="col-2 pl-1 pr-1" key={i} style={widgetCardStyle}>
+        <Widget widget={wd} key={Math.random()}></Widget>
       </div>
     )
     return (
@@ -106,16 +107,16 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <div class="card text-center tabCard">
-              <div class="card-header tabHeaderCard">
-                <ul class="nav nav-tabs card-header-tabs">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#">All Notes</a>
+            <div className="card text-center tabCard">
+              <div className="card-header tabHeaderCard">
+                <ul className="nav nav-tabs card-header-tabs">
+                  <li className="nav-item">
+                    <a className="nav-link active" href="#">All Notes</a>
                   </li>
                 </ul>
               </div>
-              <div class="card-body tabContentCard">
-                <AllNotesTable columns={[{title: 'Patient Name'}, {title: 'Description'}, {title: 'Date'}, {title: 'Chart Location'}, { title: 'Reason Code'}, { title: 'Actions' }]}></AllNotesTable>
+              <div className="card-body tabContentCard">
+                <AllNotesTable></AllNotesTable>
               </div>
             </div>
           </div>

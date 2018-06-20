@@ -1,30 +1,34 @@
 import React from 'react'
-import { Table } from 'reactstrap';
-
+import TableComponent from '../../../components/Table/simpleTable'
+import axios from 'axios'
 
 export default class AllNotesTable extends React.Component {
+  state = {
+    tableData: {
+      columns: [],
+      rows: []
+    }
+  }
+
   constructor(props) {
     super(props);
-    this.columns = props.columns
+  }
+
+  componentDidMount() {
+    axios.get(`http://ehrwebpreprod.naiacorp.net/api/Notes/GetAllNoteTypes`)
+          .then((res) => {
+            this.setState({
+              tableData: {
+                columns: ['Id', 'Name', 'Description', 'CreatedDate'],
+                rows: res.data
+              }
+            })
+          })
   }
 
   render(){
-
-    const columns = this.columns.map((wd) =>
-      <th>{wd.title}</th>
-    )
-
     return(
-      <Table responsive striped hover>
-        <thead>
-          <tr>
-            {columns}
-          </tr>
-        </thead>
-        <tbody>
-          <tr></tr>
-        </tbody>
-      </Table>
+      <TableComponent data={this.state.tableData}></TableComponent>
     )
   }
 }

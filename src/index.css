@@ -55,14 +55,14 @@ ol.bread li a {
   color: transparent !important;
 }
 
-html,
+/* html,
 body,
 #root,
 #root>div,
 #root>div>.container-fluid,
 .main-body {
   height: 100% !important;
-}
+} */
 
 .bd-sidebar {
   background-color: #343a40;
@@ -90,6 +90,14 @@ body,
 
 .bd-content .mainCard {
   border-radius: 0px;
+}
+
+.table {
+  font-size: 13px;
+}
+
+.table td, .table th{
+  padding: .55rem !important;
 }
 
 .widget-card {
