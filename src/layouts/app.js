@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import MainHeader  from './components/header'
 import DashboardPage from '../pages/dashboard'
 import MainSideBar from './components/sidebar';
@@ -16,9 +16,11 @@ class App extends Component {
           <div className="row flex-xl-nowrap main-body">
             <MainSideBar></MainSideBar>
             <main className="bd-content">
-              <Router>
-                <Route path="/" component={DashboardPage}></Route>
-              </Router>
+              <HashRouter>
+                <Switch>
+                  <Route path="/" component={DashboardPage}></Route>
+                </Switch>
+              </HashRouter>
             </main>
           </div>
         </div>
