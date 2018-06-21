@@ -26,8 +26,6 @@ export default class TableComponent extends React.Component {
         </tr>);
     });
 
-    console.log(dataRows)
-
     return (
       <table className="table table-bordered table-hover" width="100%">
         {tableHeaders}

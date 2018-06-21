@@ -2,6 +2,58 @@ import React, { Component } from 'react'
 import Widget from './components/widget'
 import AllNotesTable from './components/allnotesTable'
 
+
+class App extends Component {
+
+  constructor(props){
+    super(props)
+  }
+
+
+  render() {
+    let x = 1, y = 99
+    const widgets = widgets_list.map((wd, i) =>
+      <div className="col-2 pl-1 pr-1" key={i} style={widgetCardStyle}>
+        <Widget widget={wd}></Widget>
+      </div>
+    )
+    const widgets_2 = widgets_list2.map((wd, i) =>
+      <div className="col-2 pl-1 pr-1" key={i} style={widgetCardStyle}>
+        <Widget widget={wd} key={Math.random()}></Widget>
+      </div>
+    )
+    return (
+      <div>
+        <div className="row mb-2">
+          {widgets}
+        </div>
+        <div className="row mb-3">
+          {widgets_2}
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card text-center tabCard">
+              <div className="card-header tabHeaderCard">
+                <ul className="nav nav-tabs card-header-tabs">
+                  <li className="nav-item">
+                    <a className="nav-link active" href="#">All Notes</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="card-body tabContentCard">
+                <div className="col-md-8 pl-0 pr-0">
+                  <AllNotesTable></AllNotesTable>
+                </div>
+                <div className="col-md-8 pl-0 pr-0"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
 const widgets_list = [
   {
     icon: 'calendar',
@@ -83,47 +135,6 @@ const widgetCardStyle = {
 
 const tabsCardStyle = {
 
-}
-class App extends Component {
-  render() {
-    let x = 1, y = 99
-    const widgets = widgets_list.map((wd, i) =>
-      <div className="col-2 pl-1 pr-1" key={i} style={widgetCardStyle}>
-        <Widget widget={wd}></Widget>
-      </div>
-    )
-    const widgets_2 = widgets_list2.map((wd, i) =>
-      <div className="col-2 pl-1 pr-1" key={i} style={widgetCardStyle}>
-        <Widget widget={wd} key={Math.random()}></Widget>
-      </div>
-    )
-    return (
-      <div>
-        <div className="row mb-2">
-          {widgets}
-        </div>
-        <div className="row mb-3">
-          {widgets_2}
-        </div>
-        <div className="row">
-          <div className="col-md-12">
-            <div className="card text-center tabCard">
-              <div className="card-header tabHeaderCard">
-                <ul className="nav nav-tabs card-header-tabs">
-                  <li className="nav-item">
-                    <a className="nav-link active" href="#">All Notes</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="card-body tabContentCard">
-                <AllNotesTable></AllNotesTable>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
 }
 
 export default App;
